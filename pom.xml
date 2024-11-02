@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cs.vsu.ru</groupId>
-    <artifactId>OOP_Task2</artifactId>
+    <artifactId>OOP</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -49,6 +49,12 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>2.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
