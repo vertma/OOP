@@ -1,13 +1,11 @@
 package L5.service;
 
+import org.junit.jupiter.api.DisplayName;
 import L5.exception.InvalidDateException;
 import L5.model.Car.CarType;
 import L5.model.Client.Client;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.DisplayName;
-
 import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

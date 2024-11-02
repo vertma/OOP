@@ -1,4 +1,4 @@
-package service;
+package L5.service;
 
 import L5.exception.CarIsRentedException;
 import L5.exception.WrongCarTypeException;

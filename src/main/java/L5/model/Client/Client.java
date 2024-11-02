@@ -1,6 +1,8 @@
-package model.Client;
+package L5.model.Client;
 
 import L5.model.Car.CarType;
+import L5.model.Car.CarType;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.Objects;

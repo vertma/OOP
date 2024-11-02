@@ -1,6 +1,11 @@
 package L5.service;
 
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import L5.exception.CarIsRentedException;
+import L5.exception.WrongCarTypeException;
 import L5.model.Car.Car;
 import L5.model.Car.CarType;
 import L5.model.Car.SUV;

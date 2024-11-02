@@ -1,4 +1,4 @@
-package model.Car;
+package L5.model.Car;
 
 import L5.model.Client.Client;
 import lombok.Getter;
