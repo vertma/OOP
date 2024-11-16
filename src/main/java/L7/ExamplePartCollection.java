@@ -6,13 +6,36 @@ import java.util.Objects;
 
 @Getter
 @Setter
-public class ExamplePartCollection<T> {
-    private ExamplePartCollection<T> previous;
-    private ExamplePartCollection<T> next;
-    private T value;
+public class ExamplePartCollection {
+    private ExamplePartCollection previous;
+    private ExamplePartCollection next;
+    private Object value;
 
-    // Конструктор для создания узла с значением
-    public ExamplePartCollection(T value) {
+    public ExamplePartCollection(Object value) {
+        this.value = value;
+    }
+
+    public ExamplePartCollection getPrevious() {
+        return previous;
+    }
+
+    public void setPrevious(ExamplePartCollection previous) {
+        this.previous = previous;
+    }
+
+    public ExamplePartCollection getNext() {
+        return next;
+    }
+
+    public void setNext(ExamplePartCollection next) {
+        this.next = next;
+    }
+
+    public Object getValue() {
+        return value;
+    }
+
+    public void setValue(Object value) {
         this.value = value;
     }
 
@@ -24,12 +47,12 @@ public class ExamplePartCollection<T> {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ExamplePartCollection<?> that = (ExamplePartCollection<?>) o;
-        return Objects.equals(value, that.value);
+        ExamplePartCollection that = (ExamplePartCollection) o;
+        return value.equals(that.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return value.hashCode();
     }
 }

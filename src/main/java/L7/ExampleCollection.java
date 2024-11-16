@@ -2,13 +2,13 @@ package L7;
 
 import java.util.Iterator;
 
-public class ExampleCollection<T> implements Iterable<ExamplePartCollection<T>> {
-    private ExamplePartCollection<T> head;
-    private ExamplePartCollection<T> tail;
+public class ExampleCollection implements Iterable<ExamplePartCollection> {
+    private ExamplePartCollection head;
+    private ExamplePartCollection tail;
     private int size;
 
-    public void add(T value) {
-        ExamplePartCollection<T> newPart = new ExamplePartCollection<>(value);
+    public void add(Object value) {
+        ExamplePartCollection newPart = new ExamplePartCollection(value);
         if (tail == null) {
             head = newPart;
             tail = newPart;
@@ -20,11 +20,11 @@ public class ExampleCollection<T> implements Iterable<ExamplePartCollection<T>> 
         size++;
     }
 
-    public ExamplePartCollection<T> delete() {
+    public ExamplePartCollection delete() {
         if (head == null) {
             throw new LinkedListException("Cannot delete from empty list");
         }
-        ExamplePartCollection<T> removed = head;
+        ExamplePartCollection removed = head;
         head = head.getNext();
         if (head != null) {
             head.setPrevious(null);
@@ -35,8 +35,8 @@ public class ExampleCollection<T> implements Iterable<ExamplePartCollection<T>> 
         return removed;
     }
 
-    public ExamplePartCollection<T> delete(T value) {
-        ExamplePartCollection<T> current = head;
+    public ExamplePartCollection delete(Object value) {
+        ExamplePartCollection current = head;
         while (current != null) {
             if (current.getValue().equals(value)) {
                 if (current.getPrevious() != null) {
@@ -57,8 +57,8 @@ public class ExampleCollection<T> implements Iterable<ExamplePartCollection<T>> 
         throw new LinkedListException("Cannot delete from empty list");
     }
 
-    public ExamplePartCollection<T> findByValue(T value) {
-        ExamplePartCollection<T> current = head;
+    public ExamplePartCollection findByValue(Object value) {
+        ExamplePartCollection current = head;
         while (current != null) {
             if (current.getValue().equals(value)) {
                 return current;
@@ -72,25 +72,27 @@ public class ExampleCollection<T> implements Iterable<ExamplePartCollection<T>> 
         return size;
     }
 
-    public ExamplePartCollection<T> getHead() {
+    public ExamplePartCollection getHead() {
         return head;
     }
 
-    public ExamplePartCollection<T> getTail() {
+    public ExamplePartCollection getTail() {
         return tail;
     }
 
     @Override
-    public Iterator<ExamplePartCollection<T>> iterator() {
-        return new Iterator<ExamplePartCollection<T>>() {
-            private ExamplePartCollection<T> current = head;
+    public Iterator<ExamplePartCollection> iterator() {
+        return new Iterator<ExamplePartCollection>() {
+            private ExamplePartCollection current = head;
+
             @Override
             public boolean hasNext() {
                 return current != null;
             }
+
             @Override
-            public ExamplePartCollection<T> next() {
-                ExamplePartCollection<T> temp = current;
+            public ExamplePartCollection next() {
+                ExamplePartCollection temp = current;
                 current = current.getNext();
                 return temp;
             }
